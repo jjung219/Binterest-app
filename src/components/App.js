@@ -1,29 +1,24 @@
-import React from 'react'
-import axios from 'axios'
-import SearchBar from './SearchBar'
-import ImageList from './ImageList'
+import React from 'react';
 
-class App extends React.Component {
-    state = { images: [] }
+import { Switch, Route } from 'react-router-dom';
 
-    onSearchSubmit = async (term) => {
-        const response = await axios.get('https://api.unsplash.com/search/photos', {
-            params: { query: term },
-            headers: {
-                Authorization: 'Client-ID HogGshsiM9hbZC7IBAJ1opNRJb9aWwQEoEVrCsxxYq8'
-            }
-        })
-        this.setState({ images: response.data.results })
-    }
+import Home from "./Home";
+import MyList from './MyList';
+import Page404 from "./Page404";
 
-    render() {
-        return (
-            <div>
-                <SearchBar onSubmit={this.onSearchSubmit} />
-                <ImageList  images={this.state.images} />
-            </div>
-        )
-    }
+const App = () => {
+
+
+    return (
+        <div className="App">
+            <Switch>
+                <Route component={Home} exact path="/" />
+                <Route component={MyList} path="/list" />
+                <Route component={Page404} />
+            </Switch>
+        </div>
+    )
+
 
 }
 

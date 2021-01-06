@@ -1,16 +1,19 @@
 import React from 'react'
 
-class ImageCard extends React.Component {
+import AddToAlbumButton from "./AddToAlbumButton";
 
-  render () {
-    return (
-      <div>
-        <img
-          src={this.props.image.urls.regular}
-        />
-      </div>
-    )
-  }
+const ImageCard = (props) => {
+
+  return (
+    <div>
+      <img
+        src={props.image.urls.regular}
+        alt={props.image.alt_description}
+      />
+      <AddToAlbumButton />
+    </div>
+  )
+
 
 }
 

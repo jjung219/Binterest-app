@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #f4f4f4;
+}
+
+.navlinks {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.navlink {
+  list-style: none;
+}
