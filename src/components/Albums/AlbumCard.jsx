@@ -8,6 +8,7 @@ const AlbumCard = (props) => {
   const deleteHandler = () => {
     console.log("Deleting album");
     props.onDelete(albumId);
+    
   }
 
 
@@ -17,7 +18,9 @@ const AlbumCard = (props) => {
         <Card.Body>
           <Card.Text>
           <Card.Title>{props.title}</Card.Title>
-          <Button variant="outline-secondary">View</Button>
+          <Button variant="outline-secondary">
+            <a href={`/list/${props.id}`}>View</a>
+          </Button>
           <Button 
             variant="outline-danger"
             onClick={deleteHandler}
