@@ -9,7 +9,7 @@ const AlbumList = (props) => {
       <AlbumCard 
         key={album.id}
         id={album.id}
-        title={album.title}
+        name={album.name}
         onDelete={props.onDelete}
       />
     )

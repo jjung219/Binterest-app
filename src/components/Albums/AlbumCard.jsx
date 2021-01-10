@@ -17,7 +17,7 @@ const AlbumCard = (props) => {
       <Card border="secondary" style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Text>
-          <Card.Title>{props.title}</Card.Title>
+          <Card.Title>{props.name}</Card.Title>
           <Button variant="outline-secondary">
             <a href={`/list/${props.id}`}>View</a>
           </Button>
