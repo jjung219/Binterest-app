@@ -9,6 +9,7 @@ const AddNewAlbumForm = (props) => {
     e.preventDefault();
     console.log("Submitting new album title..");
     props.onSubmit(albumTitle)
+    setAlbumTitle("");
   }
 
   return (

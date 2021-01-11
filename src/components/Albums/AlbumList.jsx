@@ -7,8 +7,8 @@ const AlbumList = (props) => {
   const albums = props.albums.map(album => {
     return (
       <AlbumCard 
-        key={album.id}
-        id={album.id}
+        key={album._id}
+        id={album._id}
         name={album.name}
         onDelete={props.onDelete}
       />

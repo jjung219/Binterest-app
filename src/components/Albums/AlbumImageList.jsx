@@ -1,14 +1,12 @@
-import './ImageList.css'
 import React from 'react'
-import ImageCard from './ImageCard'
+import AlbumImageCard from './AlbumImageCard'
 
-const ImageList = (props) => {
+const AlbumImageList = (props) => {
   const images = props.images.map((image) => {
     return (
-      <ImageCard 
-        key={image.id} 
+      <AlbumImageCard 
+        key={image._id} 
         image={image}
-        albums={props.albums}
       />
       )
   })
@@ -17,4 +15,4 @@ const ImageList = (props) => {
   )
 }
 
-export default ImageList;
+export default AlbumImageList;

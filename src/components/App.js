@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Home from "./Home";
 import MyList from './MyList';
-import AlbumPhotos from './Albums/AlbumPhotos';
+import Album from './Albums/Album';
 import Page404 from "./Page404";
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
             <Switch>
                 <Route component={Home} exact path="/" />
                 <Route component={MyList} exact path="/list" />
-                <Route component={AlbumPhotos} path="/list/:id" />
+                <Route component={Album} path="/list/:id" />
                 <Route component={Page404} />
             </Switch>
         </div>
