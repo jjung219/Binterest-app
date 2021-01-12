@@ -10,8 +10,8 @@ const Album = props => {
   const [images, setImages] = useState([]);
   const albumId = props.match.params.id;
   
-  const albumAPI = `http://localhost:5000/api/albums/${albumId}`;
-  const imagesAPI = `http://localhost:5000/api/albums/${albumId}/images`;
+  const albumAPI = `https://binterest-jj.herokuapp.com/api/albums/${albumId}`;
+  const imagesAPI = `https://binterest-jj.herokuapp.com/api/albums/${albumId}/images`;
 
   useEffect(() => {
     Promise.all([
@@ -31,12 +31,11 @@ const Album = props => {
     const imageIndex = images.findIndex(image => image._id === imageId);
     console.log("imageIndex: ", imageIndex);
 
-    return Axios.delete(`http://localhost:5000/api/images/${imageId}`)
+    return Axios.delete(`https://binterest-jj.herokuapp.com/api/images/${imageId}`)
       .then(() => {
         console.log("Image Revmoed from album!")
         const imagesStateDupe = [...images];
         imagesStateDupe.splice(imageIndex, 1);
-        console.log("images dupe: ", imagesStateDupe);
         setImages([...imagesStateDupe]);
       });
   };

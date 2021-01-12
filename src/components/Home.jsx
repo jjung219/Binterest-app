@@ -24,12 +24,20 @@ const Home = () => {
  
   
   useEffect(() => {
-    Axios.get("http://localhost:5000/api/albums")
-    .then(res => {
-      const albums = res.data;
-      setAlbumList(albums);
+    Promise.all([
+      Axios.get("https://binterest-jj.herokuapp.com/api/albums"),
+      Axios.get('https://api.unsplash.com/search/photos', {
+          params: { query: "flowers" },
+          headers: {
+              Authorization: 'Client-ID HogGshsiM9hbZC7IBAJ1opNRJb9aWwQEoEVrCsxxYq8'
+          }
+      })
+    ]).then(all => {
+      const [ albums , defaultImages ] = all;
+      console.log(defaultImages.data)
+      setAlbumList(albums.data);
+      setImages(defaultImages.data.results);
     })
-
   }, []) 
 
 

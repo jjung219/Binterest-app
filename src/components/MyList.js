@@ -10,7 +10,7 @@ const MyList = () => {
   const [ albums, setAlbums ] = useState([]);
 
   useEffect(()=> {
-    Axios.get("http://localhost:5000/api/albums")
+    Axios.get("https://binterest-jj.herokuapp.com/api/albums")
       .then(res => {
         console.log(res.data)
         setAlbums(res.data);
@@ -22,7 +22,7 @@ const MyList = () => {
     const newAlbum = {
       name: newAlbumTitle
     }
-    return Axios.post("http://localhost:5000/api/albums/add", newAlbum)
+    return Axios.post("https://binterest-jj.herokuapp.com/api/albums/add", newAlbum)
       .then(() => {
         setAlbums([...albums, newAlbum]);
       })
@@ -31,7 +31,7 @@ const MyList = () => {
   function deleteAlbum (albumId) {
     const albumToBeDeletedIndex = albums.findIndex(album => albumId === album._id)
 
-    return Axios.delete(`http://localhost:5000/api/albums/${albumId}`)
+    return Axios.delete(`https://binterest-jj.herokuapp.com/api/albums/${albumId}`)
       .then(() => {
         const albumListDupe = [...albums];
         albumListDupe.splice(albumToBeDeletedIndex, 1);

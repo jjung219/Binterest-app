@@ -29,7 +29,7 @@ const AddToAlbumButton = props => {
     }
     console.log(newImage)
 
-    return Axios.post("http://localhost:5000/api/images/add", newImage)
+    return Axios.post("https://binterest-jj.herokuapp.com/api/images/add", newImage)
       .then(() => console.log("Image Added to album!"))
       .catch((err)=> console.log("Error: ", err))
   }
