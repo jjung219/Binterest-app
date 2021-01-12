@@ -5,8 +5,10 @@ const AlbumImageList = (props) => {
   const images = props.images.map((image) => {
     return (
       <AlbumImageCard 
-        key={image._id} 
+        key={image._id}
+        id={image._id} 
         image={image}
+        onDelete={props.onDelete}
       />
       )
   })

@@ -10,7 +10,11 @@ const ImageCard = (props) => {
         src={props.image.urls.regular}
         alt={props.image.alt_description}
       />
-      <AddToAlbumButton albums={props.albums}/>
+      <AddToAlbumButton 
+        albums={props.albums}
+        url={props.image.urls.regular}
+        description={props.image.alt_description}
+      />
     </div>
   )
 

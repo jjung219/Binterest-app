@@ -29,7 +29,7 @@ const MyList = () => {
   }
 
   function deleteAlbum (albumId) {
-    const albumToBeDeletedIndex = albums.findIndex(album => albumId === album.id)
+    const albumToBeDeletedIndex = albums.findIndex(album => albumId === album._id)
 
     return Axios.delete(`http://localhost:5000/api/albums/${albumId}`)
       .then(() => {

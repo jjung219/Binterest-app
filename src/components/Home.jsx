@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 
 import NavBar from "./NavBar";
-import SearchBar from './SearchBar';
-import ImageList from './ImageList';
+import SearchBar from './Home/SearchBar';
+import ImageList from './Home/ImageList';
 
 
 
@@ -21,6 +21,7 @@ const Home = () => {
       setImages(response.data.results)
   }
 
+ 
   
   useEffect(() => {
     Axios.get("http://localhost:5000/api/albums")

@@ -1,34 +1,39 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Axios from 'axios';
 
-import { DropdownButton, Dropdown } from 'react-bootstrap';
+import DropDownItem from "./DropDownItem";
+
+import { DropdownButton } from 'react-bootstrap';
 
 const AddToAlbumButton = props => {
   const albumNames = props.albums.map(album => {
     return (
-      <Fragment>
-        <Dropdown.Item 
-          key={album._id} 
-          href="#/action-1"
-          onClick={() => clickHandler(album._id)}
-        >
-          {album.name}
-        </Dropdown.Item>
-      </Fragment>
+      <DropDownItem
+        album={album}
+        key={album._id}
+        id={album._id}
+        name={album.name}
+        onClick={clickHandler}
+      />
     )
   })
 
   function clickHandler (albumId) {
+    console.log("adding image to album")
+    console.log("album id: ", albumId)
+    
     const newImage = {
       album_id: albumId,
-      description: props.alt,
-      url: props.src
+      description: props.description,
+      url: props.url
     }
+    console.log(newImage)
 
     return Axios.post("http://localhost:5000/api/images/add", newImage)
       .then(() => console.log("Image Added to album!"))
       .catch((err)=> console.log("Error: ", err))
   }
+
 
   return (
     <div>
