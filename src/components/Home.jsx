@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 import SearchBar from './Home/SearchBar';
 import ImageList from './Home/ImageList';
 
-
+import "./Home.scss";
 
 const Home = () => {
   const [ images, setImages ] = useState([]);
