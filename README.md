@@ -1,4 +1,4 @@
-#Project Overview
+# Project Overview
 Full-stack web application that displays a list of albums/images a user has added.
 This github project is the client folder.
 The server folder is here [Backend](https://github.com/jjung219/Binterest-backend).
