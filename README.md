@@ -1,3 +1,10 @@
+#Project Overview
+Full-stack web application that displays a list of albums/images a user has added.
+This github project is the client folder.
+The server folder is here [Backend](https://github.com/jjung219/Binterest-backend).
+
+You can also visit the deployed website here [https://binterest-jj.netlify.app/](https://binterest-jj.netlify.app/).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
