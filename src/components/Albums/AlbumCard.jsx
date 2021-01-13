@@ -13,7 +13,7 @@ const AlbumCard = (props) => {
 
 
   return (
-    <Card border="secondary" style={{ width: '18rem' }}>
+    <Card className="album-card" border="secondary" style={{ width: '18rem' }}>
       <Card.Body>
         <Card.Text>
         <Card.Title>{props.name}</Card.Title>

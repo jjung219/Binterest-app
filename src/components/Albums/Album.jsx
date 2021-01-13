@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
-import NavBar from "../NavBar";
 import AddNewImageForm from "./AddNewImageForm";
 import AlbumImageList from "./AlbumImageList";
+
+import "./Album.scss";
 
 const Album = props => {
   const [album, setAlbum] = useState({});
@@ -24,31 +25,49 @@ const Album = props => {
       setAlbum(albumData.data);
       setImages(imagesData.data);
     })
-  }, [albumAPI, imagesAPI]);
+  }, [albumAPI, imagesAPI, images]);
   
   function deleteImage (imageId) {
-    console.log("deleting image")
+    console.log("deleting image");
     const imageIndex = images.findIndex(image => image._id === imageId);
     console.log("imageIndex: ", imageIndex);
 
     return Axios.delete(`https://binterest-jj.herokuapp.com/api/images/${imageId}`)
       .then(() => {
-        console.log("Image Revmoed from album!")
+        console.log("Image Removed from album!");
         const imagesStateDupe = [...images];
         imagesStateDupe.splice(imageIndex, 1);
         setImages([...imagesStateDupe]);
       });
   };
 
+  function addImage (url, description, album_id) {
+    console.log("adding image!");
+    const newImage = {
+      url,
+      description,
+      album_id
+    }
+
+    return Axios.post("https://binterest-jj.herokuapp.com/api/images/add", newImage)
+      .then(() => {
+        setImages([...images, newImage]);
+      })
+  }
+
   return (
     <div>
-      <NavBar />
       <h1>{album.name}</h1>
-      <AddNewImageForm/>
-      <AlbumImageList 
-        images={images}
-        onDelete={deleteImage}
-      />
+      <div className="album">
+        <AddNewImageForm
+          onAdd={addImage}
+          album={album}
+        />
+        <AlbumImageList 
+          images={images}
+          onDelete={deleteImage}
+        />
+      </div>
     </div>
   )
 };

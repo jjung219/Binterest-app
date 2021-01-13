@@ -1,0 +1,32 @@
+.my-bins {
+  .album-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    Form {
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+
+    .albums {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 1em;
+
+      .album-card {
+        margin: 1em;
+      }
+    }
+  }
+
+
+}

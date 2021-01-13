@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 
-import NavBar from "./NavBar";
 import SearchBar from './Home/SearchBar';
 import ImageList from './Home/ImageList';
 
@@ -43,7 +42,6 @@ const Home = () => {
 
   return (
       <div>
-        <NavBar />
         <SearchBar onSubmit={onSearchSubmit} />
         <ImageList 
           images={images}

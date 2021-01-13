@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
 import Axios from 'axios';
 
-import NavBar from "./NavBar";
 import AlbumList from "./Albums/AlbumList";
 import AddNewAlbumForm from "./Albums/AddNewAlbumForm";
+
+import "./MyList.scss"
 
 const MyList = () => {
   const [ albums, setAlbums ] = useState([]);
@@ -15,7 +15,7 @@ const MyList = () => {
         console.log(res.data)
         setAlbums(res.data);
       })
-  }, [])
+  }, [albums])
 
   function save (newAlbumTitle) {
     console.log("saving new album...")
@@ -41,16 +41,18 @@ const MyList = () => {
   }
 
   return (
-    <div>
-      <NavBar />
+    <div className="my-bins">
       <h1>My Bins</h1>
-      <AddNewAlbumForm
-        onSubmit={save}
-      />
-      <AlbumList 
-        albums={albums}
-        onDelete={deleteAlbum} 
-      />
+      <div className="album-list">
+        <AddNewAlbumForm
+          className="form"
+          onSubmit={save}
+        />
+        <AlbumList
+          albums={albums}
+          onDelete={deleteAlbum} 
+        />
+      </div>
     </div>
   )
 }

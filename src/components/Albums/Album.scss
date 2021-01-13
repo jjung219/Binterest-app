@@ -1,0 +1,22 @@
+.album {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .image-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1em;
+  }
+
+  Form {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

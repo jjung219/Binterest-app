@@ -1,0 +1,47 @@
+@import "styles/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  padding: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: $light-color;
+
+  h4 {
+    color: $dark-color;
+  }
+
+  .navlinks {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    font-size: 1.2em;
+    margin: 0;
+  }
+  
+  .navlink {
+    list-style: none;
+  }
+
+}
+

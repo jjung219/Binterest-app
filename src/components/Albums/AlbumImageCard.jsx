@@ -9,7 +9,7 @@ const AlbumImageCard = (props) => {
   }
 
   return (
-    <div>
+    <div className="image-card">
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={props.image.url} alt={props.image.description}/>
         <Card.Body>
@@ -25,5 +25,6 @@ const AlbumImageCard = (props) => {
     </div>
   )
 }
+
 
 export default AlbumImageCard;

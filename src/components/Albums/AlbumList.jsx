@@ -16,7 +16,7 @@ const AlbumList = (props) => {
   })
 
   return (
-    <div>
+    <div className="albums">
       {albums}
     </div>
   )

@@ -1,0 +1,19 @@
+@import "styles/variables.scss";
+
+.image-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em;
+  
+  img:hover {
+    opacity: 0.5;
+  }
+
+  .add-to-album-button {
+    align-self: center;
+  }
+
+
+} 
